@@ -1,0 +1,103 @@
+/*!  
+    Scrollies  
+    Copyright (C) 2020 Roman Flossler - SSG is Licensed under GPLv3  
+*/
+
+
+.scrollies {
+	position: fixed;
+	left: 0px; 
+    width: 3.3vw;
+	height: 6.6vw;
+	width: 3.3vmax;
+    height: 6.6vmax;
+	transition: top 0.6s ease-in-out;
+	color: #CACACA;
+}
+
+.scrollies svg {
+	position: absolute; 
+	width: 111%;
+	height: auto;
+	top: 16%; 
+	left: auto; 
+	right: 0%;
+	max-width: initial;
+}
+
+@media (max-width: 1300px) {
+	.scrollies {
+		width: 4vw;
+		height: 8vw;
+		width: 4vmax;
+		height: 8vmax;
+	}
+}
+
+.runningUp {
+	transform: scaleY(-1);
+}
+
+.speedDown {
+	animation-duration: 1.2s !important;
+}
+
+
+.leg {
+	width: 23%; 
+	height: 2.7%; 
+	background-color:#CACACA; 
+	border-radius: 60% 36% 36% 60%; 
+	position: absolute; 
+	left: 0;   
+	animation-name: onestep;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite; 
+	animation-play-state: paused;
+	transform-origin: 100% 50%;	
+}
+
+.play {
+	animation-play-state: running !important;
+}
+
+.stop {
+	animation:none !important;
+}
+
+.rear-first {
+	top: 27%;
+	width: 27%; 
+}
+
+.rear-second {
+	top: 30.6%;
+	animation-name: onestepi;
+	animation-play-state: paused;
+}
+
+.front-first {
+	top: 49%;
+}
+
+.front-second {
+	top: 52.3%;
+	width: 26%; 
+	animation-name: onestepi;
+	animation-play-state: paused;
+}
+
+@keyframes onestep {
+	0%   { transform: rotate(0deg); }
+	25%  { transform: rotate(-30deg);}	
+	75%  { transform: rotate(30deg);}	
+	100% {transform: rotate(0deg);}
+  }
+
+  @keyframes onestepi {
+	0%   { transform: rotate(0deg); }
+	25%  { transform: rotate(30deg);}	
+	75%  { transform: rotate(-30deg);}	
+	100% {transform: rotate(0deg);}
+  }  
+
